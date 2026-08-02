@@ -1,0 +1,58 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of veefriends.com and api.veefriends.com
+note: veefriends.com is a Blazor SPA with a catch-all route that returns HTTP 200
+  with the HTML app shell (or a rendered 404 page) for every path, so 200 statuses
+  below are soft-404s - no real well-known documents are published. api.veefriends.com
+  (Azure Front Door) returns hard 404s for all discovery paths. No raw files saved
+  because nothing real was found.
+hosts:
+- host: https://veefriends.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    real: false
+    note: soft-404 (SPA app shell, not RFC 9116 text)
+  - path: /security.txt
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    real: false
+  - path: /llms.txt
+    status: 200
+    content_type: text/html
+    real: false
+    note: renders the "Oops! Page not found" 404 page
+  - path: /robots.txt
+    status: 200
+    content_type: text/html
+    real: false
+    note: returns the HTML app shell, not a robots.txt document
+- host: https://api.veefriends.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.veefriends.com/
+status_page: https://status.veefriends.com/
+versioning: null
+deprecation: null
+sla: null
+deprecated_operations: []
+notes: VeeFriends operates a public status page (Next.js, "VeeFriends Status Page")
+  at status.veefriends.com covering its consumer platform. The company publishes
+  no public API, so there is no versioning policy, deprecation policy, or SLA to
+  capture.
