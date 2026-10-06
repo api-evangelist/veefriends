@@ -39,7 +39,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 image: https://veefriends.com/apple-touch-icon.png
 tags:
 - Company
@@ -59,6 +59,8 @@ tags_raw:
 - Web3
 apis: []
 common:
+- url: https://blog.veefriends.com/feed
+  type: BlogRSS
 - type: DomainSecurity
   url: security/veefriends-domain-security.yml
 - type: Website
